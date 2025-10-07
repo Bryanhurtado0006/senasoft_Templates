@@ -1,96 +1,100 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col, Button, Card } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import reactLogo from '../assets/react.svg'
-
-const features = [
-  { title: "Membership Organisations", text: "Automatiza renovaciones y pagos de membresía." },
-  { title: "National Associations", text: "Automatiza renovaciones y pagos de membresía." },
-  { title: "Clubs And Groups", text: "Automatiza renovaciones y pagos de membresía." }
-]
+import Persons from '../assets/persons.png' // Imagen genérica de personas
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate()
 
   return (
-    <>
-      {/* Hero */}
-      <section className="py-5 bg-light">
-        <Container>
-          <Row className="align-items-center gy-4">
-            <Col md={6}>
-              <h1 className="fw-bold lh-1">
-                Conoce a los mejores <span className="text-success">candidatos</span>
-              </h1>
-              <p className="text-muted">Conoce a los mejores candidatos de tu centro de formación</p>
-              <div className="d-flex gap-2">
-                <Button variant="success" onClick={() => navigate('/register')}>Regístrame</Button>
-                <Button variant="outline-secondary" onClick={() => navigate('/login')}>Login</Button>
+    <main className="min-vh-100 bg-white d-flex align-items-center justify-content-center px-3 py-5">
+      <Container>
+        <Row>
+          <Col xs={12} className="p-0">
+            <img
+              src={Persons}
+              alt="Imagen principal"
+              className="w-100 mb-4"
+              style={{
+                maxHeight: "280px",
+                objectFit: "cover",
+                borderRadius: "12px",
+              }}
+            />
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center text-center mt-4">
+          <Col xs={12} md={10} lg={9}>
+            <h1 className="fw-bold display-5 fs-1 mb-3">
+              Bienvenido a <span style={{ color: "#007bff" }}>nuestra plataforma</span>
+            </h1>
+
+            <p className="text-muted fs-6 mb-4 mx-auto" style={{ maxWidth: "700px" }}>
+              Una solución moderna, fácil de usar y adaptable a cualquier tipo de proyecto o negocio. 
+              Empieza hoy a construir tu experiencia digital con nosotros.
+            </p>
+
+            <div className="mb-4">
+              <Button
+                onClick={() => navigate('/login')}
+                className="px-5 py-2 fw-semibold me-3"
+                style={{
+                  backgroundColor: "#007bff",
+                  border: "none",
+                  fontSize: "1.1rem",
+                  marginTop: "20px",
+                }}
+              >
+                Iniciar Sesión
+              </Button>
+
+              <Button
+                onClick={() => navigate('/register')}
+                variant="outline-primary"
+                className="px-5 py-2 fw-semibold"
+                style={{
+                  fontSize: "1.1rem",
+                  marginTop: "20px",
+                }}
+              >
+                Registrarse
+              </Button>
+            </div>
+
+            <div
+              className="d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 mt-5"
+              style={{ marginTop: "60px" }}
+            >
+              <div className="text-center">
+                <h6 className="fw-bold text-primary mb-1"> Funcionalidad 1</h6>
+                <small className="text-muted">Descripción breve</small>
               </div>
-            </Col>
-            <Col md={6} className="text-center">
-              <img src={reactLogo} alt="Ilustración" className="img-fluid" style={{ maxHeight: 260, objectFit: 'contain' }} />
-            </Col>
-          </Row>
-        </Container>
-      </section>
 
-      {/* Features */}
-      <section className="py-5">
-        <Container>
-          <Row className="mb-4 text-center">
-            <Col>
-              <h2 className="fw-bold">Controla toda tu comunidad desde un solo sistema</h2>
-              <p className="text-muted">Lorem ipsum dolor sit amet, googr tre wjvndk.</p>
-            </Col>
-          </Row>
-          <Row className="g-4">
-            {features.map((f, i) => (
-              <Col md={4} key={i}>
-                <Card className="h-100 shadow-sm border-light">
-                  <Card.Body>
-                    <Card.Title>{f.title}</Card.Title>
-                    <Card.Text>{f.text}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+              <div
+                className="d-none d-md-block"
+                style={{ width: 1, height: 30, backgroundColor: "#dee2e6" }}
+              />
 
-      {/* Destacado */}
-      <section className="py-5 bg-light">
-        <Container>
-          <Row className="align-items-center gy-4">
-            <Col md={6} className="text-center">
-              <img src={reactLogo} alt="Seguridad" className="img-fluid" style={{ maxHeight: 260, objectFit: 'contain' }} />
-            </Col>
-            <Col md={6}>
-              <h3 className="fw-bold">Seguridad en todo momento al alcance de un click</h3>
-              <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat vestibulum lorem sed porta.
-              </p>
-              <Button variant="success" onClick={() => navigate('/maps')}>Learn More</Button>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+              <div className="text-center">
+                <h6 className="fw-bold text-primary mb-1"> Funcionalidad 2</h6>
+                <small className="text-muted">Descripción breve</small>
+              </div>
 
-      {/* CTA final */}
-      <section className="py-5">
-        <Container>
-          <Row>
-            <Col className="text-center">
-              <h2 className="fw-bold">Conoce más sobre nosotros</h2>
-              <p className="text-muted">Contáctanos</p>
-              <Button variant="success" onClick={() => navigate('/register')}>Contáctanos →</Button>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    </>
+              <div
+                className="d-none d-md-block"
+                style={{ width: 1, height: 30, backgroundColor: "#dee2e6" }}
+              />
+
+              <div className="text-center">
+                <h6 className="fw-bold text-primary mb-1"> Funcionalidad 3</h6>
+                <small className="text-muted">Descripción breve</small>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </main>
   )
 }
 
