@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Login from './pages/Login'
 import LandingPage from './pages/LandingPage'
+import LandingPageV2 from './pages/LandingPageV2'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import ChangePassword from './pages/ChangePassword'
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<LandingPage/>}/>
+        <Route path='/landing-v2' element={<LandingPageV2/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>

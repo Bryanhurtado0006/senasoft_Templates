@@ -62,6 +62,21 @@ const LandingPage: React.FC = () => {
               </Button>
             </div>
 
+            <div className="mt-4">
+              <Button
+                onClick={() => navigate('/landing-v2')}
+                variant="outline-success"
+                className="px-4 py-2 fw-semibold"
+                style={{
+                  fontSize: "1rem",
+                  borderColor: "#28a745",
+                  color: "#28a745",
+                }}
+              >
+                Ver Landing V2 🚀
+              </Button>
+            </div>
+
             <div
               className="d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 mt-5"
               style={{ marginTop: "60px" }}
